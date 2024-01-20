@@ -37,7 +37,7 @@ export default ProductsContextProvider
 export const useProductsContext = () => {
     const context = useContext(ProductsContext)
 
-    if(!context) throw new Error("useProductsContext must be called within a PostContextProvider")
+    if(!context) throw new Error("useProductsContext must be called within a ProductsContextProvider")
 
     return context
 }

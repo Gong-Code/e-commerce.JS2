@@ -1,6 +1,8 @@
 import React from 'react'
 
-const ProductsPage = () => {
+const ProductsPage = ({item}) => {
+  console.log(item)
+  
   return (
     <div>ProductsPage</div>
   )
