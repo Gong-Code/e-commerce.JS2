@@ -5,7 +5,7 @@ export const CheckoutItem = ({ item }) => {
 
     const { _id, name, images, price, amount  } = item;
 
-    const { itemAmount, increaseAmount, decreaseAmount, totalPrice } = useCartContext(CartContext)
+    const { increaseAmount, decreaseAmount } = useCartContext(CartContext)
 
     return (
         <tr>
