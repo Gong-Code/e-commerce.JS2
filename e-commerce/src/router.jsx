@@ -9,6 +9,7 @@ import HomePage from "./app/public/HomePage";
 import ContactPage  from "./app/public/ContactPage";
 import ProductDetailsPage  from "./app/public/ProductDetailsPage";
 import SidebarPage from "./app/public/SidebarPage";
+import CheckoutPage from "./app/public/CheckoutPage";
 
 
 export const router = createBrowserRouter([
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
                     {
                         path: "sidebar",
                         element: <SidebarPage />
+                    },
+                    {
+                        path: "checkout",
+                        element: <CheckoutPage />
                     },
                 ]
             }

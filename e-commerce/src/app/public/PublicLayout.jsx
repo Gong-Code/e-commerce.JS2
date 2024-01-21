@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 // components
 import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
+import { Toaster } from 'react-hot-toast';
 
 // providers
 import SidebarContextProvider from '../../context/SidebarContext'
@@ -21,6 +22,7 @@ function PublicLayout() {
                         <Outlet />
                     </div>
                     <Footer />
+                    <Toaster position="top-center" />
                 </ProductsContextProvider>  
             </CartContextProvider>       
         </SidebarContextProvider>

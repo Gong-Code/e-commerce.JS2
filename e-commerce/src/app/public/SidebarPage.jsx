@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { SidebarContext, useSidebarContext } from '../../context/SidebarContext';
 import { CartContext, useCartContext } from '../../context/CartContext';
+
 
 // icons
 import { IoMdClose } from "react-icons/io";
@@ -8,14 +9,13 @@ import { FiTrash2 } from 'react-icons/fi';
 
 // components
 import { CartItem } from '../../components/CartItem';
-import { useRef } from 'react';
-
 
 
 function SidebarPage() {
     const { isOpen, handleClose } = useSidebarContext(SidebarContext)
     
     const { cart, clearCart, totalPrice, itemAmount } = useCartContext(CartContext)
+
 
     return (
         <div onClick={(event) => event.stopPropagation()}
@@ -56,11 +56,11 @@ function SidebarPage() {
                 <Link to={'/'} className='bg-gray-400 flex p-4
                 justify-center items-center w-full font-medium rounded-sm'>
                     View cart
-                </Link>
-                <Link to={'/'} className='bg-emerald-800 flex p-4
+                </Link>              
+                <Link to={'/checkout'} className='bg-emerald-800 flex p-4
                 justify-center items-center w-full font-medium rounded-sm'>
                     Checkout
-                </Link>              
+                </Link>                                           
             </div>
         </div>
     )
