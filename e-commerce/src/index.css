@@ -4,8 +4,6 @@
 @tailwind utilities;
 
 
-
-
 body{
   background-color: #212529;
   margin: 0;
@@ -13,5 +11,8 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
-
-
+.Toastify__toast {
+  border-radius: 10px;
+  background: #333;
+  color: #fff;
+}

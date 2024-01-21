@@ -11,8 +11,12 @@ import SidebarContextProvider from '../../context/SidebarContext'
 import CartContextProvider from '../../context/CartContext'
 import ProductsContextProvider from '../../context/ProductContext'
 
-function PublicLayout() {
+import { toast } from 'react-hot-toast';
 
+
+
+function PublicLayout() {
+  
     return (
         <SidebarContextProvider>
             <CartContextProvider>
