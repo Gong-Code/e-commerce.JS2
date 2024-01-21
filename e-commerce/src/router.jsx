@@ -11,9 +11,7 @@ import ProductDetailsPage  from "./app/public/ProductDetailsPage";
 import SidebarPage from "./app/public/SidebarPage";
 import CheckoutPage from "./app/public/CheckoutPage";
 
-
 export const router = createBrowserRouter([
-
     {
         path:"/",
         element: <RootLayout />,
