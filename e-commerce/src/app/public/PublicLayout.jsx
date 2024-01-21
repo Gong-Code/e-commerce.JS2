@@ -1,7 +1,9 @@
 import React from 'react'
-
-import { Navbar } from '../../components/Navbar'
 import { Outlet } from 'react-router-dom'
+
+// components
+import { Navbar } from '../../components/Navbar'
+import { Footer } from '../../components/Footer'
 
 // providers
 import SidebarContextProvider from '../../context/SidebarContext'
@@ -17,7 +19,8 @@ function PublicLayout() {
                     <Navbar />
                     <div className='overflow-hidden'>
                         <Outlet />
-                    </div>               
+                    </div>
+                    <Footer />
                 </ProductsContextProvider>  
             </CartContextProvider>       
         </SidebarContextProvider>

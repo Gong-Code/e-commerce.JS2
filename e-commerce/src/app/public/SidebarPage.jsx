@@ -15,7 +15,7 @@ import { useRef } from 'react';
 function SidebarPage() {
     const { isOpen, handleClose } = useSidebarContext(SidebarContext)
     
-    const { cart, clearCart } = useCartContext(CartContext)
+    const { cart, clearCart, totalPrice, itemAmount } = useCartContext(CartContext)
 
     return (
         <div onClick={(event) => event.stopPropagation()}
@@ -24,7 +24,7 @@ function SidebarPage() {
         duration-300 z-20 px-4 h-full`}>
             <div className='flex text-white justify-between py-6 border-b border-gray-600'>
                 <div className='uppercase text-sm font-semibold'>Shopping Cart 
-                    <span className='text-emerald-500 ml-2'>({cart.reduce((total, item) => total + item.amount, 0)}) </span>
+                    <span className='text-emerald-500 ml-2'>({ itemAmount }) </span>
                 </div>
                 <button 
                 onClick={handleClose}               
@@ -32,7 +32,8 @@ function SidebarPage() {
                     <IoMdClose className='text-2xl bg-red-800 py-1 rounded-sm'  />
                 </button>
             </div>
-            <div className='text-white'>
+            <div className='text-white flex flex-col gap-y-2 h-[520px] lg:h-[550px]
+            overflow-y-auto overflow-x-hidden border-b'>
                 {
                     cart.map(item => {
                         return <CartItem key={item._id} item={item} />
@@ -44,7 +45,7 @@ function SidebarPage() {
                 <div className='flex w-full justify-between items-center'>
                     {/* total price */}
                     <div className='uppercase font-semibold'>
-                        <span className='mr-2'>Total:</span>100 SEK
+                        <span className='mr-2'>Total:</span>{ parseFloat(totalPrice).toFixed(2) } SEK
                     </div>
                     {/* clear cart */}
                     <div onClick={clearCart} className='cursor-pointer py-4 bg-red-500 w-12 
@@ -52,6 +53,14 @@ function SidebarPage() {
                         <FiTrash2 />
                     </div>
                 </div>
+                <Link to={'/'} className='bg-gray-400 flex p-4
+                justify-center items-center w-full font-medium rounded-sm'>
+                    View cart
+                </Link>
+                <Link to={'/'} className='bg-emerald-800 flex p-4
+                justify-center items-center w-full font-medium rounded-sm'>
+                    Checkout
+                </Link>              
             </div>
         </div>
     )

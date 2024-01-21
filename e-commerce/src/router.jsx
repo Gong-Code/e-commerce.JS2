@@ -7,11 +7,12 @@ import PublicLayout from "./app/public/PublicLayout";
 //pages
 import HomePage from "./app/public/HomePage";
 import ContactPage  from "./app/public/ContactPage";
-import ProductsPage  from "./app/public/ProductsPage";
 import ProductDetailsPage  from "./app/public/ProductDetailsPage";
 import SidebarPage from "./app/public/SidebarPage";
 
+
 export const router = createBrowserRouter([
+
     {
         path:"/",
         element: <RootLayout />,
@@ -29,10 +30,6 @@ export const router = createBrowserRouter([
                         element: <ContactPage />
                     },
                     {
-                        path: "products",
-                        element: <ProductsPage />
-                    },
-                    {
                         path: "/product/:_id",
                         element: <ProductDetailsPage />
                     },
@@ -41,7 +38,6 @@ export const router = createBrowserRouter([
                         element: <SidebarPage />
                     },
                 ]
-                
             }
         ]
     }

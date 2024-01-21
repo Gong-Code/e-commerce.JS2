@@ -27,7 +27,6 @@ export const Navbar = () => {
                 <ul className='flex gap-x-4'>
                     <li><NavLink to="/" className="text-white [&.active]:underline">Home</NavLink></li>
                     <li><NavLink to="/contact" className="text-white [&.active]:underline">Contact</NavLink></li>
-                    <li><NavLink to="/products" className="text-white [&.active]:underline">Products</NavLink></li>
                     <li><NavLink to="/login" className="text-white [&.active]:underline">Login</NavLink></li>
 
                 </ul>
