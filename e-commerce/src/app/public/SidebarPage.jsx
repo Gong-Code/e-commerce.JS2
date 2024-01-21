@@ -4,7 +4,7 @@ import { CartContext, useCartContext } from '../../context/CartContext';
 
 // icons
 import { IoMdClose } from "react-icons/io";
-import { FiTrash } from 'react-icons/fi';
+import { FiTrash2 } from 'react-icons/fi';
 
 // components
 import { CartItem } from '../../components/CartItem';
@@ -15,7 +15,7 @@ import { useRef } from 'react';
 function SidebarPage() {
     const { isOpen, handleClose } = useSidebarContext(SidebarContext)
     
-    const { cart } = useCartContext(CartContext)
+    const { cart, clearCart } = useCartContext(CartContext)
 
     return (
         <div onClick={(event) => event.stopPropagation()}
@@ -33,11 +33,26 @@ function SidebarPage() {
                 </button>
             </div>
             <div className='text-white'>
-            {
-                cart.map(item => {
-                    return <CartItem key={item._id} item={item} />
-                })
-            }</div>
+                {
+                    cart.map(item => {
+                        return <CartItem key={item._id} item={item} />
+                    })
+                }
+            </div>
+            <div className='text-white flex flex-col gap-y-3 py-4
+            mt-4'>
+                <div className='flex w-full justify-between items-center'>
+                    {/* total price */}
+                    <div className='uppercase font-semibold'>
+                        <span className='mr-2'>Total:</span>100 SEK
+                    </div>
+                    {/* clear cart */}
+                    <div onClick={clearCart} className='cursor-pointer py-4 bg-red-500 w-12 
+                    h-12 flex justify-center items-center text-xl rounded-sm'>
+                        <FiTrash2 />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

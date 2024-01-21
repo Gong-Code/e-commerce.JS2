@@ -11,7 +11,7 @@ export const CartItem = ({ item }) => {
     
     const { _id, name, images, price, amount  } = item;
     
-    const { removeFromCart } = useCartContext(CartContext)
+    const { removeFromCart, increaseAmount, decreaseAmount } = useCartContext(CartContext)
 
     return (
         <div className='flex gap-x-4 py-2 lg:px-6 border-b border-gray-600
@@ -39,14 +39,14 @@ export const CartItem = ({ item }) => {
                         <div className='flex flex-1 max-w-[100px] 
                         items-center h-full font-medium border'>
                             {/* minus icon */}
-                            <div className='flex-1 h-full flex justify-center
+                            <div onClick={() => decreaseAmount(_id)} className='flex-1 h-full flex justify-center
                             items-center cursor-pointer'>
                                 <FaMinus  />
                             </div>
                             {/* amount */}
                             <div className='h-full flex justify-center items-center px-2'>{amount}</div>                    
                             {/* plus icon */}
-                            <div className='flex-1 h-full flex justify-center
+                            <div onClick={() => increaseAmount(_id)} className='flex-1 h-full flex justify-center
                             items-center cursor-pointer'>
                                 <FaPlus />
                             </div>

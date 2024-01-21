@@ -8,10 +8,14 @@ import { IoSearch } from "react-icons/io5";
 
 // context
 import { SidebarContext, useSidebarContext } from '../context/SidebarContext';
+import { CartContext, useCartContext } from '../context/CartContext';
+
 
 export const Navbar = () => {
 
-    const { isOpen, setIsOpen } = useSidebarContext(SidebarContext)
+    const { isOpen, setIsOpen } = useSidebarContext(SidebarContext);
+
+    const { itemAmount } = useCartContext(CartContext);
 
     const handleClick = () => {
         setIsOpen(!isOpen)
@@ -27,9 +31,13 @@ export const Navbar = () => {
                     <li><NavLink to="/login" className="text-white [&.active]:underline">Login</NavLink></li>
 
                 </ul>
-                <div onClick={handleClick} className='cursor-pointer flex relative'>
+                <div onClick={handleClick} className='cursor-pointer flex relative max-w-[50px]'>
                     <SidebarPage />
+                    {/* shopping cart */}
                     <AiOutlineShoppingCart className='text-2xl text-white' />
+                    <div className='bg-red-600 absolute -right-2 -bottom-2 text-[12px]
+                    w-[18px] h-[18px] text-white rounded-full flex justify-center
+                    items-center'>{itemAmount}</div>
                 </div>
             </div>
         </nav>
