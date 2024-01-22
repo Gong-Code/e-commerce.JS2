@@ -16,5 +16,4 @@ export const RegisterFormSchema = Yup.object({
         .required("this text field can not be empty")
         .min(3, "The text field must be atleast 3 letters long")
         .max(50, "The text is too long")
-    
 })

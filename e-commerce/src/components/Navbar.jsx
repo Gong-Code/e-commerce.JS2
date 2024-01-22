@@ -23,7 +23,7 @@ export const Navbar = () => {
     return (
         <nav className='bg-emerald-800 py-4'>
             <div className='max-w-[1440px] m-auto px-2 flex justify-between items-center'>                
-                <Link to="/" className='text-white text-2xl font-semibold'><p>E-commerce</p></Link>
+                <Link to="/" className='text-white text-2xl font-semibold'><p>G-commerce</p></Link>
                 <ul className='flex gap-x-4'>
                     <li><NavLink to="/" className="text-white [&.active]:underline">Home</NavLink></li>
                     <li><NavLink to="/contact" className="text-white [&.active]:underline">Contact</NavLink></li>
