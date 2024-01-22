@@ -1,4 +1,4 @@
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { SidebarContext, useSidebarContext } from '../../context/SidebarContext';
 import { CartContext, useCartContext } from '../../context/CartContext';
 
@@ -15,7 +15,6 @@ function SidebarPage() {
     const { isOpen, handleClose } = useSidebarContext(SidebarContext)
     
     const { cart, clearCart, totalPrice, itemAmount } = useCartContext(CartContext)
-
 
     return (
         <div onClick={(event) => event.stopPropagation()}

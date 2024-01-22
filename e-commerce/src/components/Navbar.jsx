@@ -3,7 +3,6 @@ import SidebarPage from '../app/public/SidebarPage';
 
 //icons
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { IoSearch } from "react-icons/io5";
 
 
 // context
