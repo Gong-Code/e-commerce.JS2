@@ -10,6 +10,10 @@ import ContactPage  from "./app/public/ContactPage";
 import ProductDetailsPage  from "./app/public/ProductDetailsPage";
 import SidebarPage from "./app/public/SidebarPage";
 import CheckoutPage from "./app/public/CheckoutPage";
+import AuthLayout from "./app/auth/AuthLayout";
+import LoginPage from "./app/auth/LoginPage";
+import RegisterPage from "./app/auth/RegisterPage";
+
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +46,22 @@ export const router = createBrowserRouter([
                     },
                 ]
             },
+
+            {
+                path:"auth",
+                element: <AuthLayout />,
+                children: [
+                    {
+                        path: "login",
+                        element: <LoginPage />
+                    },
+                    {
+                        path: "register",
+                        element: <RegisterPage />
+
+                    }
+                ]
+            }
         ]
     }
 ])

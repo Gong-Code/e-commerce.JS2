@@ -26,7 +26,7 @@ export const Navbar = () => {
                 <ul className='flex gap-x-4'>
                     <li><NavLink to="/" className="text-white [&.active]:underline">Home</NavLink></li>
                     <li><NavLink to="/contact" className="text-white [&.active]:underline">Contact</NavLink></li>
-                    <li><NavLink to="/login" className="text-white [&.active]:underline">Login</NavLink></li>
+                    <li><NavLink to="/auth/login" className="text-white [&.active]:underline">Login</NavLink></li>
 
                 </ul>
                 <div onClick={handleClick} className='cursor-pointer flex relative max-w-[50px]'>
