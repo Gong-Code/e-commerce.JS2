@@ -41,7 +41,7 @@ function ContactPage() {
           navigate('/');
 
         } catch (error) {
-          console.error(error);
+          console.error(error.message);
           toast.error('An error occurred.', error.message)
         }
       }
