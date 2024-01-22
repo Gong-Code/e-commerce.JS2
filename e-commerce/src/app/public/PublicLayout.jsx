@@ -6,6 +6,7 @@ import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
 import { Toaster } from 'react-hot-toast';
 
+
 // providers
 import SidebarContextProvider from '../../context/SidebarContext'
 import CartContextProvider from '../../context/CartContext'
