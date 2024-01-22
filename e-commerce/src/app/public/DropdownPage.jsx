@@ -28,13 +28,13 @@ export const DropdownPage = ({ products, onCategoryChange } ) => {
             <div className='absolute top-full mt-2 w-full bg-emerald-800 rounded-lg shadow-lg z-20'>
                 <button onClick={() => onCategoryChange()} 
                 className='block px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-600
-                text-center' role='menuitem'>
+                text-center uppercase' role='menuitem'>
                     Show All
                 </button>
                 {uniqueCategories.map(category => (
                 <button key={category} onClick={() => onCategoryChange(category)} 
                 className='block px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-600
-                text-center' role='menuitem'>
+                text-center uppercase' role='menuitem'>
                     {category}
                 </button>
             ))}
