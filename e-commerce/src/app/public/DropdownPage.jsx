@@ -32,7 +32,7 @@ export const DropdownPage = ({ products, onCategoryChange } ) => {
                     Show All
                 </button>
                 {uniqueCategories.map(category => (
-                <button key={category} onClick={() => onCategoryChange(category)} 
+                <button key={category._id} onClick={() => onCategoryChange(category)} 
                 className='block px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-600
                 text-center uppercase' role='menuitem'>
                     {category}
