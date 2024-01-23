@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import { ContactFormSchema } from "../../lib/Schemas";
+import { ContactSchema  } from "../../lib/Schemas";
 
 
 function ContactPage() {
@@ -15,7 +15,7 @@ function ContactPage() {
         email: '',
         message: ''
       },
-      validationSchema: ContactFormSchema,
+      validationSchema: ContactSchema ,
       onSubmit: async (values) => {
         try {
           const response = await fetch(url, {

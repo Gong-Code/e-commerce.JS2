@@ -4,7 +4,7 @@ const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 
-export const ContactFormSchema = Yup.object({
+export const ContactSchema = Yup.object({
     name: Yup.string()
         .required("You need to enter a name")
         .min(3, "Your name must be atleast 3 character long"),
