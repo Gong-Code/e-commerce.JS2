@@ -1,13 +1,12 @@
 import { useFormik } from "formik";
-import { RegisterFormSchema } from "../../lib/Schemas";
 import { useState } from "react";
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { ContactFormSchema } from "../../lib/Schemas";
 
 
 function ContactPage() {
   const [url, setUrl] = useState('https://js2-ecommerce-api.vercel.app/api/messages')
-
   const navigate = useNavigate()
 
   const form = useFormik({
@@ -16,7 +15,7 @@ function ContactPage() {
         email: '',
         message: ''
       },
-      validationSchema: RegisterFormSchema,
+      validationSchema: ContactFormSchema,
       onSubmit: async (values) => {
         try {
           const response = await fetch(url, {
