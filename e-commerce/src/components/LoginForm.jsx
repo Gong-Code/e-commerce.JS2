@@ -1,8 +1,14 @@
 import { useFormik } from 'formik'
 import { UserLoginSchema } from '../lib/Schemas'
-
+import { Link } from 'react-router-dom';
+import { AuthContext, useAuthContext,  } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast';
 
 export const LoginForm = ({ title }) => {
+    const { login, token } = useAuthContext(AuthContext)
+
+    const navigate = useNavigate()
 
     const form = useFormik({
     initialValues: {
@@ -12,10 +18,19 @@ export const LoginForm = ({ title }) => {
     validationSchema: UserLoginSchema,
     onSubmit: async (values) => {
         console.log(values)
-        form.resetForm()
+        try {
+            await login(values)
+            if(token){
+                navigate('/private')
+                form.resetForm()
+                toast.success('Login successful!', { duration: 4000 })
+            }
+        } catch (error) {
+            console.error('Login failed:', error);
+            toast.error('Login failed!')
+        }
     }
     })
-
 
     return (
         <form onSubmit={form.handleSubmit} className='p-4 shadow-xl rounded-lg w-[400px] bg-emerald-800'>
@@ -34,6 +49,7 @@ export const LoginForm = ({ title }) => {
             </div>
             <button type="submit" className="bg-blue-700 w-full py-1.5 rounded-md 
             text-white hover:bg-orange-700 transition-colors">Login</button>
+            <Link to="/" className="bg-green-700 w-full py-1.5 rounded-md text-white hover:bg-orange-700 transition-colors block text-center mt-4">Back</Link>
         </form>
     )
 }
