@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const OrderHistoryPage = () => {
 
-    const { orders, totalPrice, totalQuantity, clearOrders } = useOrderContext(OrderContext)
+    const { orders, totalPrice, totalQuantity } = useOrderContext(OrderContext)
 
     console.log(orders)
 
