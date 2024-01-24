@@ -16,7 +16,7 @@ const OrderHistoryPage = () => {
                     <thead className="text-xs text-white uppercase bg-emerald-800">
                         <tr>
                             <th scope="col" className="px-6 py-3 rounded-s-lg">
-                                ID
+                                USER ID
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Product name
@@ -49,7 +49,6 @@ const OrderHistoryPage = () => {
             <Link to="/" className="mt-4 px-4 py-2 bg-orange-700 text-white rounded 
             hover:bg-emerald-800">Back to Home
             </Link>
-            
         </div>
 )
 }
