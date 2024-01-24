@@ -35,7 +35,7 @@ const OrderContextProvider = ({ children }) =>{
             const data = await response.json()
             console.log(data)
 
-            setOrders(data)
+            setOrders(data);
 
             const totalQuantity = calculateTotalQuantity(data);
             const totalPrice = calculateTotalPrice(data);
