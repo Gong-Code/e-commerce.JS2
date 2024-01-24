@@ -1,26 +1,12 @@
-import toast from 'react-hot-toast';
 import { CheckoutItem } from '../../components/CheckoutItem';
 import { CartContext, useCartContext } from '../../context/CartContext'
-import { useNavigate } from 'react-router-dom';
 
 
 function CheckoutPage() {
     
-    const { cart, totalPrice, clearCart } = useCartContext(CartContext)
-
-    const navigate = useNavigate()
+    const { cart, totalPrice, handlePay } = useCartContext(CartContext)
 
     const tax = 20;
-
-    const handlePay = () => {
-        if (cart.length === 0) {
-            toast.error("Your cart is empty. Please add items before making a payment.");
-        } else {
-            toast.success("Payment successful!");
-            clearCart();
-            navigate('/');
-        }
-    };
 
     return (
         <div className=" h-screen py-8">
