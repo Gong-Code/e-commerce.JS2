@@ -44,6 +44,7 @@ const CartContextProvider = ({ children }) => {
             console.log(data)
 
             toast.success("Payment successful!", {autoclose: 5000})
+            
             setCart([])
             setItemAmount(0)
             setTotalPrice(0)
