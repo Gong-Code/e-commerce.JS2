@@ -60,11 +60,9 @@ export const router = createBrowserRouter([
                     {
                         path: "register",
                         element: <RegisterPage />
-
                     }
                 ]
             },
-
 
             {
                 path: "private",
@@ -75,10 +73,7 @@ export const router = createBrowserRouter([
                         element: <OrderHistoryPage />
                     }
                 ]
-
             }
-
-
         ]
     }
 ])

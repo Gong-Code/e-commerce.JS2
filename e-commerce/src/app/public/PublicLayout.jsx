@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 
 // components
@@ -9,9 +9,15 @@ import { Footer } from '../../components/Footer'
 import SidebarContextProvider from '../../context/SidebarContext'
 import CartContextProvider from '../../context/CartContext'
 import ProductsContextProvider from '../../context/ProductContext'
+import { useAuthContext } from '../../context/AuthContext'
 
 function PublicLayout() {
 
+    const { getToken }= useAuthContext()
+    useEffect(() => {
+        getToken()
+    }, [])
+    
     return (
         <SidebarContextProvider>
             <CartContextProvider>

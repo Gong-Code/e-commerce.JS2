@@ -41,5 +41,4 @@ export const UserLoginSchema = Yup.object({
 
     password: Yup.string()
     .required('You need to enter a password')
-    .matches(passwordRegex,'Your password needs to have one Uppercase, one lowercase, one number and a special character'),
 })

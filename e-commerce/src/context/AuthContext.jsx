@@ -18,6 +18,7 @@ const AuthContextProvider = ({ children }) => {
     }, [])
 
     useEffect(() => {
+        
         if(token) {
             localStorage.setItem('access_token', token)
         }
@@ -25,6 +26,14 @@ const AuthContextProvider = ({ children }) => {
             localStorage.removeItem('access_token');
         }
     }, [token])
+
+    const getToken = () => {
+        const localStorageToken = localStorage.getItem('access_token')
+
+        if(localStorageToken !== null){
+            setToken(localStorageToken)
+        }
+    }
 
     const register = async (formData) => {
         try {
@@ -82,7 +91,8 @@ const AuthContextProvider = ({ children }) => {
     const value = {
         register,
         login,
-        token
+        token,
+        getToken
     }
 
     return(

@@ -1,12 +1,17 @@
+import { useEffect } from 'react';
 import { OrderItem } from '../../components/OrderItem'
 import { OrderContext, useOrderContext } from '../../context/OrderContext'
 import { Link } from 'react-router-dom';
 
 const OrderHistoryPage = () => {
 
-    const { orders, totalPrice, totalQuantity } = useOrderContext(OrderContext)
+    const { orders, totalPrice, totalQuantity, getAllOrders } = useOrderContext(OrderContext)
 
     console.log(orders)
+
+    useEffect(() => {
+        getAllOrders()
+    }, [])
 
     return (   
         <div className="flex flex-col items-center overflow-x-auto m-12">
