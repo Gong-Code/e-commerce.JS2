@@ -7,7 +7,7 @@ const AuthContextProvider = ({ children }) => {
     const [token, setToken] = useState(null)
 
     useEffect(() =>{
-        if(token) return
+        if(token) {}
         
         const localStorageToken = localStorage.getItem('access_token')
 

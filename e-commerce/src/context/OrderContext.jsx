@@ -52,6 +52,13 @@ const OrderContextProvider = ({ children }) =>{
 
     useEffect(() => {
         getAllOrders()
+
+        const intervalId = setInterval(() => {
+            getAllOrders();
+        }, 5000)
+
+        return () => clearInterval(intervalId)
+
     }, [url])
 
     const value = {
