@@ -12,7 +12,7 @@ import ProductsContextProvider from '../../context/ProductContext'
 import { useAuthContext } from '../../context/AuthContext'
 
 function PublicLayout() {
-
+    
     const { getToken }= useAuthContext()
     useEffect(() => {
         getToken()

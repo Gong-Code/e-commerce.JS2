@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
-export const DropdownPage = ({ products, onCategoryChange } ) => {
+export const DropdownPage = ({ products, onCategoryChange }) => {
     const [isOpen, setIsOpen] = useState(false)
         
     const handleOpen = () => {

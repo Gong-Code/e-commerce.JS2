@@ -84,7 +84,6 @@ const AuthContextProvider = ({ children }) => {
 
         } catch (error) {
             console.log("Something went wrong", error)
-            
         }
     }
 
