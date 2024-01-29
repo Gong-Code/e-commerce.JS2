@@ -9,12 +9,15 @@ import { FiTrash2 } from 'react-icons/fi';
 
 // components
 import { CartItem } from '../../components/CartItem';
+import { useState } from 'react';
 
 
 function SidebarPage() {
     const { isOpen, handleClose } = useSidebarContext(SidebarContext)
     
     const { cart, clearCart, totalPrice, itemAmount } = useCartContext(CartContext)
+
+    const [isSidebarVisible, setIsSidebarVisible] = useState(true)
 
     return (
         <div onClick={(event) => event.stopPropagation()}
@@ -55,11 +58,11 @@ function SidebarPage() {
                 <Link to={'/'} className='bg-gray-400 flex p-4
                 justify-center items-center w-full font-medium rounded-sm'>
                     View cart
-                </Link>              
-                <Link to={'/checkout'} className='bg-emerald-800 flex p-4
-                justify-center items-center w-full font-medium rounded-sm'>
+                </Link>
+                <Link to={'/checkout'} onClick={handleClose} className='bg-emerald-800 flex p-4
+                    justify-center items-center w-full font-medium rounded-sm'>
                     Checkout
-                </Link>                                           
+                </Link>                                                                                    
             </div>
         </div>
     )
