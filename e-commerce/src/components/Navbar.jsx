@@ -10,6 +10,7 @@ import { SidebarContext, useSidebarContext } from '../context/SidebarContext';
 import { CartContext, useCartContext } from '../context/CartContext';
 
 
+
 export const Navbar = () => {
 
     const { isOpen, setIsOpen } = useSidebarContext(SidebarContext);
@@ -27,7 +28,6 @@ export const Navbar = () => {
                     <li><NavLink to="/" className="text-white [&.active]:underline">Home</NavLink></li>
                     <li><NavLink to="/contact" className="text-white [&.active]:underline">Contact</NavLink></li>
                     <li><NavLink to="/auth/login" className="text-white [&.active]:underline">Login</NavLink></li>
-
                 </ul>
                 <div onClick={handleClick} className='cursor-pointer flex relative max-w-[50px]'>
                     <SidebarPage />
