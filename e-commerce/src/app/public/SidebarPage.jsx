@@ -9,8 +9,6 @@ import { FiTrash2 } from 'react-icons/fi';
 
 // components
 import { CartItem } from '../../components/CartItem';
-import { useState } from 'react';
-
 
 function SidebarPage() {
     const { isOpen, handleClose } = useSidebarContext(SidebarContext)
