@@ -17,8 +17,6 @@ function SidebarPage() {
     
     const { cart, clearCart, totalPrice, itemAmount } = useCartContext(CartContext)
 
-    const [isSidebarVisible, setIsSidebarVisible] = useState(true)
-
     return (
         <div onClick={(event) => event.stopPropagation()}
         className={`${!isOpen && 'hidden'} bg-neutral-900 w-full fixed right-0
