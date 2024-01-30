@@ -51,7 +51,7 @@ function SidebarPage() {
                         <FiTrash2 />
                     </div>
                 </div>
-                <Link to={'/'} className='bg-gray-400 flex p-4
+                <Link to={'/checkout'} onClick={handleClose} className='bg-gray-400 flex p-4
                 justify-center items-center w-full font-medium rounded-sm'>
                     View cart
                 </Link>
