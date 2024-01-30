@@ -41,12 +41,12 @@ const OrderHistoryPage = () => {
                             })
                         }           
                     </tbody>
-                    <tfoot className="text-xs text-white uppercase bg-emerald-800 mt-4 rounded-md">
+                    <tfoot className="text-xs text-white uppercase bg-emerald-800 mt-4 ">
                     <tr>
-                        <th scope="row" className="px-6 py-3 rounded-s-lg">Total</th>
-                        <td className="px-6 py-3">{totalQuantity} Quantity</td>
-                        <td className="px-6 py-3">{totalPrice} SEK</td>
-                        <td className="px-6 py-3 rounded-e-lg"></td>
+                        <th scope="row" className="px-6 py-3 text-xl">Total</th>
+                        <td className="px-6 py-3 text-xl">{totalQuantity} Quantity</td>
+                        <td className="px-6 py-3 text-xl">{totalPrice} SEK</td>
+                        <td className="px-6 py-3"></td>
                     </tr>
                 </tfoot>
                 </table>
