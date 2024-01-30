@@ -1,4 +1,4 @@
-# Simple E-commerece 
+# Simple E-commerce
 
 This is a simple e-commerce with a checkout application built with React. It allows users to add items to a shopping cart and proceed to checkout.
 
