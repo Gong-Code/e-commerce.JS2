@@ -2,9 +2,10 @@ import { createContext, useContext, useState } from "react";
 
 export const OrderContext = createContext();
 
-const OrderContextProvider = ({ children }) =>{
+const OrderContextProvider = ({ children }) => {
+    
     const [orders, setOrders] = useState([]);
-    const [url, setUrl] = useState('https://js2-ecommerce-api.vercel.app/api/orders')
+    const [url, setUrl] = useState('https://js2-ecommerce-api.vercel.app/api/orders');
     const [totalQuantity, setTotalQuantity] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
 
