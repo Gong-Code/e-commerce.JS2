@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const OrderHistoryPage = () => {
 
     const { orders, totalPrice, totalQuantity, getAllOrders } = useOrderContext(OrderContext)
-    const sortedOrders = [...orders].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
     console.log(orders)
 
     useEffect(() => {
