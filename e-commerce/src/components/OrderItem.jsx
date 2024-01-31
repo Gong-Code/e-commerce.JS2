@@ -4,6 +4,7 @@ export const OrderItem = ({ order }) => {
     const { _id: orderId, products } = order;
 
     const totalPrice = products.reduce((total, { quantity, product: { price } }) => total + quantity * price, 0);
+    
     return (
         <>
             <h2 className='text-xl mb-1 mt-4'>Order ID: {orderId}</h2>
