@@ -36,7 +36,7 @@ const OrderHistoryPage = () => {
                 </table>
             </div>
             <Link to="/" className="mt-4 px-4 py-2 bg-orange-700 text-white rounded 
-            hover:bg-emerald-800">Back to Home
+            hover:bg-emerald-800"> Back to Home
             </Link>
         </div>
 )
