@@ -8,7 +8,7 @@ This application is designed to provide a simple e-commerce experience. Here's h
 
 1. **View a list of available items**: When you open the application, you'll see a list of items available for purchase. Each item includes a picture, a description, and a price.
 
-2. **Add items to a shopping cart**: If you see an item you'd like to purchase, click the "Add to Cart" button. This will add the item to your shopping cart.
+2. **Add items to a shopping cart**: If you see an item you'd like to purchase, hover over an item and click the "PLUS ICON" button. This will add the item to your shopping cart.
 
 3. **View a summary of items in the shopping cart**: You can view the items in your shopping cart at any time by clicking the "Checkout" or "View Cart" button. This will show you a summary of all the items in your cart, including the total price.
 
