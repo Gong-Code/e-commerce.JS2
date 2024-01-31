@@ -19,11 +19,11 @@ const OrderHistoryPage = () => {
             <div className="flex justify-center w-full">
                 <table className="w-3/4 text-sm text-left rtl:text-right text-gray-500 dark:text-orange-400">
                     <tbody>
-                        {
-                            orders.map(order => {
-                                return <OrderItem key={order._id} order={order} />
-                            })
-                        }           
+                    {
+                        orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map(order => {
+                            return <OrderItem key={order._id} order={order} />
+                        })
+                    }          
                     </tbody>
                     <tfoot className="text-xs text-white uppercase bg-emerald-800 mt-4 ">
                     <tr>
