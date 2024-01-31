@@ -25,7 +25,7 @@ const OrderHistoryPage = () => {
                         })
                     }          
                     </tbody>
-                    <tfoot className="text-xs text-white uppercase bg-emerald-800 mt-4 ">
+                    <tfoot className="text-xs text-white uppercase  mt-4 ">
                     <tr>
                         <th scope="row" className="px-6 py-3 text-xl">Total</th>
                         <td className="px-6 py-3 text-xl">{totalQuantity} Quantity</td>
