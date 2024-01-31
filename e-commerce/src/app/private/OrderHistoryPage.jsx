@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const OrderHistoryPage = () => {
 
     const { orders, totalPrice, totalQuantity, getAllOrders } = useOrderContext(OrderContext)
-
+    const sortedOrders = [...orders].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     console.log(orders)
 
     useEffect(() => {
@@ -14,7 +14,7 @@ const OrderHistoryPage = () => {
     }, [])
 
     return (   
-        <div className="flex flex-col items-center overflow-x-auto m-12">
+        <div className="flex flex-col items-center overflow-x-auto m-12 w-full">
             <h1 className="text-2xl font-bold mb-4 text-white">Order History</h1>
             <div className="flex justify-center w-full">
                 <table className="w-3/4 text-sm text-left rtl:text-right text-gray-500 dark:text-orange-400">
