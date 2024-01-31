@@ -18,22 +18,6 @@ const OrderHistoryPage = () => {
             <h1 className="text-2xl font-bold mb-4 text-white">Order History</h1>
             <div className="flex justify-center w-full">
                 <table className="w-3/4 text-sm text-left rtl:text-right text-gray-500 dark:text-orange-400">
-                    <thead className="text-xs text-white uppercase bg-emerald-800">
-                        <tr>
-                            <th scope="col" className="px-6 py-3 rounded-s-lg">
-                                USER ID
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Product name
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Qty
-                            </th>
-                            <th scope="col" className="px-6 py-3 rounded-e-lg">
-                                Price
-                            </th>
-                        </tr>
-                    </thead>
                     <tbody>
                         {
                             orders.map(order => {
