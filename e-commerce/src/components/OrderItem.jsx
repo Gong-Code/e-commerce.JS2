@@ -15,10 +15,10 @@ export const OrderItem = ({ order }) => {
                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {name}
                     </th>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-4 dark:text-white">
                         {quantity}
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-4 dark:text-white">
                         {price} SEK
                     </td>
                 </tr>
