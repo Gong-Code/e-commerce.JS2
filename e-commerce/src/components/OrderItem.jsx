@@ -3,6 +3,7 @@ import React from 'react'
 export const OrderItem = ({ order }) => {
     const { _id: orderId, products } = order;
 
+
     const totalPrice = products.reduce((total, { quantity, product: { price } }) => total + quantity * price, 0);
     const totalQuantity = products.reduce((total, { quantity }) => total + quantity, 0);
 
