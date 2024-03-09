@@ -1,5 +1,3 @@
-const Message = require('../schemas/messageSchema')
-
 exports.sendMessage = async (req, res) => {
     const { name, email, message } = req.body;
 
