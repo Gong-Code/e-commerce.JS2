@@ -31,3 +31,50 @@ exports.createNewProduct = async (req, res) => {
         console.error('Something went wrong when creating product:', err.message)
     }
 }
+
+exports.getProductById = async (req, res) => {
+    if(!mongoose.isValidObjectId(req.params.id)){
+        return res.status(400).json({ message: 'ObjectId not valid' })
+    }
+
+    try {
+        const product = await Product.findById(req.params.id)
+        res.status(200).json(product)
+    } catch (err) {
+        res.status(404)
+        console.log('Product not found', err.message)
+    }
+}
+
+exports.updateProductById = async (req, res) => {
+    if(!mongoose.isValidObjectId(req.params.id)){
+        return res.status(400).json({ message: 'ObjectId not valid' })
+    }
+
+    try {
+        const product = await Product.findOneAndUpdate(
+            { _id: req.params.id },
+            req.body,
+            { new: true }
+        )
+        res.status(200).json(product)
+    } catch (err) {
+        res.status(404)
+        console.log('Product not found', err.message)
+    }
+}
+
+exports.deleteProductById = async (req, res) => {
+    if(!mongoose.isValidObjectId(req.params.id)){
+        return res.status(400).json({ message: 'ObjectId not valid' })
+    }
+
+    try {
+        const product = await Product.findByIdAndDelete(req.params.id);
+
+        res.status(200).json({ message: 'Product deleted successfully' })
+    } catch (err) {
+        res.status(404)
+        console.log('Product not found', err.message)
+    }
+}
