@@ -4,7 +4,7 @@ export const ProductsContext = createContext()
 
 const ProductsContextProvider = ({ children }) => {
 
-    const [url, setUrl] = useState('https://js2-ecommerce-api.vercel.app/api/products')
+    const [url, setUrl] = useState('http://localhost:9999/api/products')
     const [products, setProducts] = useState([])
 
     useEffect(() => {
