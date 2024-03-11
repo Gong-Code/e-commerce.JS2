@@ -6,19 +6,6 @@ const OrderContextProvider = ({ children }) => {
     
     const [orders, setOrders] = useState([]);
     const [url, setUrl] = useState('http://localhost:9999/api/orders');
-    // const [totalQuantity, setTotalQuantity] = useState(0);
-    // const [totalPrice, setTotalPrice] = useState(0);
-
-    // const calculateTotalQuantity = (data) => {
-    //     return data.reduce((total, order) => total + order.products.reduce((total, product) => 
-    //     total + product.quantity, 0), 0);
-    // }
-
-    // const calculateTotalPrice = (data) => {
-    //     return data.reduce((total, order) => total + order.products.reduce((total, product) => 
-    //     total + product.product.price * product.quantity, 0), 0);
-    // }
-
 
     const getAllOrders = async () => {
         const token = localStorage.getItem('access_token')
@@ -39,12 +26,6 @@ const OrderContextProvider = ({ children }) => {
             console.log(Array.isArray(data));
             setOrders(data);
 
-            // const totalQuantity = calculateTotalQuantity(data);
-            // const totalPrice = calculateTotalPrice(data);
-
-            // setTotalQuantity(totalQuantity);
-            // setTotalPrice(totalPrice);
-
             return data
         }
         catch(error){
@@ -55,8 +36,6 @@ const OrderContextProvider = ({ children }) => {
     const value = {
         orders,
         getAllOrders,
-        // totalPrice,
-        // totalQuantity,
     }
 
     return(
