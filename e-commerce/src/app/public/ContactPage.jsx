@@ -6,7 +6,7 @@ import { ContactSchema  } from "../../lib/Schemas";
 
 
 function ContactPage() {
-  const [url, setUrl] = useState('https://js2-ecommerce-api.vercel.app/api/messages')
+  const [url, setUrl] = useState('http://localhost:9999/api/messages')
   const navigate = useNavigate()
 
   const form = useFormik({

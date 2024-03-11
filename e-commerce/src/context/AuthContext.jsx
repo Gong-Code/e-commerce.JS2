@@ -37,7 +37,7 @@ const AuthContextProvider = ({ children }) => {
 
     const register = async (formData) => {
         try {
-        const res = await fetch('https://js2-ecommerce-api.vercel.app/api/auth/register', {
+        const res = await fetch('http://localhost:9999/api/auth/register', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -62,7 +62,7 @@ const AuthContextProvider = ({ children }) => {
 
     const login = async (formData) => {
         try {
-            const response = await fetch('https://js2-ecommerce-api.vercel.app/api/auth/login', {
+            const response = await fetch('http://localhost:9999/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
