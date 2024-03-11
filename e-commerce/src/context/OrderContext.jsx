@@ -6,18 +6,19 @@ const OrderContextProvider = ({ children }) => {
     
     const [orders, setOrders] = useState([]);
     const [url, setUrl] = useState('http://localhost:9999/api/orders');
-    const [totalQuantity, setTotalQuantity] = useState(0);
-    const [totalPrice, setTotalPrice] = useState(0);
+    // const [totalQuantity, setTotalQuantity] = useState(0);
+    // const [totalPrice, setTotalPrice] = useState(0);
 
-    const calculateTotalQuantity = (data) => {
-        return data.reduce((total, order) => total + order.products.reduce((total, product) => 
-        total + product.quantity, 0), 0);
-    }
+    // const calculateTotalQuantity = (data) => {
+    //     return data.reduce((total, order) => total + order.products.reduce((total, product) => 
+    //     total + product.quantity, 0), 0);
+    // }
 
-    const calculateTotalPrice = (data) => {
-        return data.reduce((total, order) => total + order.products.reduce((total, product) => 
-        total + product.product.price * product.quantity, 0), 0);
-    }
+    // const calculateTotalPrice = (data) => {
+    //     return data.reduce((total, order) => total + order.products.reduce((total, product) => 
+    //     total + product.product.price * product.quantity, 0), 0);
+    // }
+
 
     const getAllOrders = async () => {
         const token = localStorage.getItem('access_token')
@@ -25,41 +26,37 @@ const OrderContextProvider = ({ children }) => {
             const response = await fetch(url, {
                 method: 'GET',
                 headers: {
-                    'Authorization': `Bearer ${token}`
+                    'authorization': `Bearer ${token}`
                 }
             });
-    
+
             if(!response.ok){
                 throw new Error("status: " + response.status)
             }
-    
+
             const data = await response.json()
             console.log(data)
-    
-            if (Array.isArray(data.orders)) {
-                setOrders(data.orders);
-    
-                const totalQuantity = calculateTotalQuantity(data.orders);
-                const totalPrice = calculateTotalPrice(data.orders);
-    
-                setTotalQuantity(totalQuantity);
-                setTotalPrice(totalPrice);
-            } else {
-                console.error('Orders is not an array:', data.orders);
-            }
-    
-            return data.orders
+            console.log(Array.isArray(data));
+            setOrders(data);
+
+            // const totalQuantity = calculateTotalQuantity(data);
+            // const totalPrice = calculateTotalPrice(data);
+
+            // setTotalQuantity(totalQuantity);
+            // setTotalPrice(totalPrice);
+
+            return data
         }
         catch(error){
-            console.log("Something went wrong", error)
+            console.log("Something went wrong", error.message)
         }
-    };
+    }
 
     const value = {
         orders,
         getAllOrders,
-        totalPrice,
-        totalQuantity,
+        // totalPrice,
+        // totalQuantity,
     }
 
     return(

@@ -50,7 +50,7 @@ exports.getOrders = async (req, res) => {
                 user: user._id
             }).populate('products.productId');
             
-            res.status(200).json({ message: 'Orders fetched successfully', orders });
+            res.status(200).json(orders);
         } catch (err) {
             console.log('Failed to fetch orders', err.message);
             res.status(500).json({ message: 'Failed to fetch orders', error: err.message });
