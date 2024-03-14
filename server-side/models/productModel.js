@@ -78,3 +78,5 @@ exports.deleteProductById = async (req, res) => {
         console.log('Product not found', err.message)
     }
 }
+
+
