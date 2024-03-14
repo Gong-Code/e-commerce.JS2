@@ -26,10 +26,6 @@ exports.createNewProduct = async (req, res) => {
             images
         })
 
-        if(!product){
-            return res.status(404).json({ message: 'Product creation failed' })
-        }
-
         res.status(201).json(product);
     } catch (err) {
         res.status(500)
