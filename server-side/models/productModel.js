@@ -25,9 +25,14 @@ exports.createNewProduct = async (req, res) => {
             category,
             images
         })
+
+        if(!product){
+            return res.status(404).json({ message: 'Product creation failed' })
+        }
+
         res.status(201).json(product);
     } catch (err) {
-        res.status(400, 500)
+        res.status(500)
         console.error('Something went wrong when creating product:', err.message)
     }
 }
@@ -39,10 +44,13 @@ exports.getProductById = async (req, res) => {
 
     try {
         const product = await Product.findById(req.params.id)
+        if(!product){
+            return res.status(404).json({ message: 'id not found' })
+        }
         res.status(200).json(product)
     } catch (err) {
-        res.status(404)
-        console.log('Product not found', err.message)
+        res.status(500)
+        console.log('Something went wrong when', err.message)
     }
 }
 
