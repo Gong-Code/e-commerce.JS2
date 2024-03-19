@@ -12,11 +12,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 app.use(cors());
 
-
 app.use('/api/products', productController)
 app.use('/api/messages', messageController)
 app.use('/api/auth', userController)
 app.use('/api/orders', orderController)
+
+//error handler
 
 
 module.exports = app
