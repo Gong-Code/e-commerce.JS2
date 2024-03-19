@@ -17,7 +17,5 @@ app.use('/api/messages', messageController)
 app.use('/api/auth', userController)
 app.use('/api/orders', orderController)
 
-//error handler
-
 
 module.exports = app
