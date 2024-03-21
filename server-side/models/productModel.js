@@ -8,7 +8,6 @@ exports.getAllProducts = asyncHandler(async (req, res) => {
     res.status(200).json(products)
 })
 
-
 exports.createNewProduct = asyncHandler(async(req, res) => {
     const { name, price, description, category, images } = req.body;
 
