@@ -9,6 +9,10 @@ app.listen(PORT, () => {
 
 require('dotenv').config();
 
+app.get('/', (req, res) => {
+    res.send('Hey this is my API running 🥳')
+})
+
 mongoose
 .connect(process.env.MONGO_URI)
 .then(() => {
