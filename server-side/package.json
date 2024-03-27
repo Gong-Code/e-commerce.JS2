@@ -5,7 +5,8 @@
   "main": "sever.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server"
+    "dev": "nodemon server",
+    "build": "node server"
   },
   "keywords": [],
   "author": "Gong Moonphruk",
