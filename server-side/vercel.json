@@ -1,5 +1,5 @@
 {
     "version": 2,
-    "rewrites": [{ "source": "/(.*)", "destination": "/server-side/server.js" }],
-    "builds": [{ "src": "server-side/server.js", "use": "@vercel/node" }]
+    "rewrites": [{ "source": "/(.*)", "destination": "/server.js" }],
+    "npm": true
 }
