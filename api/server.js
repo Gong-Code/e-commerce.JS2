@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 9999;
 
+app.get('/', (req, res) => {
+    res.send('Running on VERCEL!')
+})
+
 app.listen(PORT, () => {
     console.log('Server is running on: http://localhost:' + PORT)
 })
