@@ -9,7 +9,7 @@ exports.createOrder = async (req, res) => {
         return res.status(401).json({ message: 'No token provided' });
     }
 
-    jwt.verify(token, 'your_jwt_secret', async (err, user) => {
+    jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
         if (err) {
             console.log(err.message);
             return res.sendStatus(400);
@@ -39,7 +39,7 @@ exports.getOrders = async (req, res) => {
         return res.status(401).json({ message: 'No token provided' });
     }
 
-    jwt.verify(token, 'your_jwt_secret', async (err, user) => {
+    jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
         if(err){
             console.log(err.message)
             return res.sendStatus(400)
